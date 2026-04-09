@@ -205,7 +205,7 @@ OmniRoute 是一个面向多供应商大语言模型的 AI 网关：它提供兼
 ## docker使用
 
 ```
-docker run -d --name cli-proxy-api --restart unless-stopped -p 8317:8317 -v /opt/web/node/cliproxyapi1/config.yaml:/CLIProxyAPI/config.yaml -v /opt/web/node/cliproxyapi1/auths:/root/.cli-proxy-api -v /opt/web/node/cliproxyapi1/logs:/CLIProxyAPI/logs eceasy/cli-proxy-api:latest
+docker run -d --name cli-proxy-api --restart unless-stopped -p 8317:8317 -v /opt/web/node/aiproxyapi/config.yaml:/CLIProxyAPI/config.yaml -v /opt/web/node/aiproxyapi/auths:/root/.cli-proxy-api -v /opt/web/node/aiproxyapi/logs:/CLIProxyAPI/logs eceasy/cli-proxy-api:latest
 
 docker restart cli-proxy-api
 
