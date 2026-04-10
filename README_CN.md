@@ -200,9 +200,7 @@ OmniRoute 是一个面向多供应商大语言模型的 AI 网关：它提供兼
 
 此项目根据 MIT 许可证授权 - 有关详细信息，请参阅 [LICENSE](LICENSE) 文件。
 
-
-
-## docker使用
+## docker 使用
 
 ```
 docker run -d --name cli-proxy-api --restart unless-stopped -p 8317:8317 -v /opt/web/node/aiproxyapi/config.yaml:/CLIProxyAPI/config.yaml -v /opt/web/node/aiproxyapi/auths:/root/.cli-proxy-api -v /opt/web/node/aiproxyapi/logs:/CLIProxyAPI/logs eceasy/cli-proxy-api:latest
@@ -212,5 +210,20 @@ docker restart cli-proxy-api
 docker logs cli-proxy-api
 
 代理使用 mihomo
-```
 
+解决方法，粘贴前在 vim 中输入：
+
+:set paste
+粘贴完后恢复：
+:set nopaste
+
+:%d 清空内容
+
+查看负载
+top          # 实时查看进程、CPU、内存
+df -h        # 各挂载点磁盘使用率
+free -h      # 内存使用情况（human readable）
+docker stats cli-proxy-api --no-stream
+docker top cli-proxy-api
+docker system df -v | grep cli-proxy-api
+```
